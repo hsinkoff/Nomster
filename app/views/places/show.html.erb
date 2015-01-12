@@ -133,7 +133,7 @@
   <h1>Photos</h1>
   <br/>
   <% @place.photos.each do |photo| %>
-  <%= photo.picture %>
+  <%= image_tag photo.picture %>
   <%= photo.caption %>
   <br />
   <% end %>
