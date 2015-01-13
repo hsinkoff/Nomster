@@ -38,7 +38,7 @@
     <p><%= place.description %></p><br />
 
     <% if place.user.present? %>
-    <small><% place.user.email %></small>
+      <small><%= place.user.email %></small>
     <% end %>
 
     <% if place.comments.last.present? %>
