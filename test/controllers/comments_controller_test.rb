@@ -8,7 +8,7 @@ class CommentsControllerTest < ActionController::TestCase
     post :create, :place_id => place.id, :comment => { 
         :rating => '1_star',
         :message => 'ick'}
-    assert_response :success
-    assert_redirected_to places_path
+    assert_not_empty(place.comments)
+    assert_redirected_to place_path(place)
   end
 end
