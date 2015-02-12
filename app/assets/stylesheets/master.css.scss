@@ -41,9 +41,9 @@ body {
 	padding: 8px;
 }
 
- #map-canvas {
+#map-canvas {
         height: 300px;
-      }
+}
 
 .clear {
 	clear: both;
@@ -56,6 +56,7 @@ blockquote {
   padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
 }
+
 blockquote:before {
   color: #ccc;
   content: open-quote;
@@ -64,6 +65,7 @@ blockquote:before {
   margin-right: 0.25em;
   vertical-align: -0.4em;
 }
+
 blockquote p {
   display: inline;
 }
@@ -72,6 +74,7 @@ blockquote p {
     height: 550px;
     width: 100%;
 }
+
 .carousel-caption {
     font-family: 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 40px;

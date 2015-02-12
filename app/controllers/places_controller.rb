@@ -1,8 +1,8 @@
 class PlacesController < ApplicationController
-  before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
+    before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
 
 	def index
-	@places = Place.order(:name).page(params[:page]).per(2)
+	   @places = Place.order(:name).page(params[:page]).per(2)
 	end
 
 	def new 
@@ -22,7 +22,6 @@ class PlacesController < ApplicationController
 		@place = Place.find(params[:id])
         @comment =Comment.new
         @photo = Photo.new
-    
 	end
 
     def edit
@@ -34,16 +33,16 @@ class PlacesController < ApplicationController
     end
     
     def update
-    @place=Place.find(params[:id])
-    if @place.user !=current_user
-    	return render :text => "Not Allowed", :status => :forbidden
-    end
-    @place.update_attributes(place_params)
-    if @place.valid?
-      redirect_to root_path
-  else
-  	render :new, :status => :unprocessable_entity
-  end
+        @place=Place.find(params[:id])
+        if @place.user !=current_user
+    	   return render :text => "Not Allowed", :status => :forbidden
+        end
+        @place.update_attributes(place_params)
+        if @place.valid?
+            redirect_to root_path
+        else
+  	        render :new, :status => :unprocessable_entity
+        end
     end
 
     def destroy
